@@ -3,12 +3,18 @@
 turn a certificate bundle into an array of certificates you can pass to
 [tls](http://nodejs.org/docs/latest/api/tls.html) as the `opts.ca`
 
+[![build status](https://secure.travis-ci.org/substack/cert-unbundle.png)](http://travis-ci.org/substack/cert-unbundle)
+
+[![testling badge](https://ci.testling.com/substack/cert-unbundle.png)](https://ci.testling.com/substack/cert-unbundle)
+
 # example
 
 ## split
 
 ``` js
 var fs = require('fs')
+var unbundle = require('cert-unbundle');
+
 var certs = unbundle(fs.readFileSync('bundle.ca', 'utf8'));
 console.log(certs);
 ```
@@ -17,9 +23,11 @@ console.log(certs);
 
 ``` js
 var fs = require('fs')
+var https = require('https');
+var unbundle = require('cert-unbundle');
+
 var certs = unbundle(fs.readFileSync('bundle.ca', 'utf8'));
 
-var https = require('https');
 var opts = { ca: certs };
 var server = https.createServer(opts, function () {
     res.end('beep boop\n');
