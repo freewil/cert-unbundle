@@ -31,9 +31,11 @@
     "files": "test/*.js",
     "browsers": [
       "ie/8..latest",
-      "firefox/16..latest",
+      "firefox/15",
+      "firefox/latest",
       "firefox/nightly",
-      "chrome/22..latest",
+      "chrome/15",
+      "chrome/latest",
       "chrome/canary",
       "opera/12..latest",
       "opera/next",
