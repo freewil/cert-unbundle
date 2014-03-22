@@ -4,6 +4,7 @@
   "description": "split a certificate bundle into an array of certificates",
   "main": "index.js",
   "devDependencies": {
+    "array-map": "~0.0.0",
     "tape": "~2.11.0"
   },
   "scripts": {
